@@ -8,7 +8,7 @@ import service_app.model.Ticket;
 
 import java.util.List;
 
-public class ServiceReceptionControllerImpl implements ReceptionController{
+public class ServiceReceptionControllerImpl implements ServiceReceptionController{
 
     private ServiceDataBase serviceDataBase;
 
