@@ -1,5 +1,6 @@
 package service_app.service_users_controller;
 
+import service_app.db.ServiceDataBase;
 import service_app.exception.AppException;
 import service_app.exception.LoginDataException;
 import service_app.model.ReceptionUser;
@@ -7,8 +8,16 @@ import service_app.model.Ticket;
 
 import java.util.List;
 
-public class ServiceReceptionControllerImpl implements IServiceReceptionController{
-    
+public class ServiceReceptionControllerImpl implements ServiceReceptionController{
+
+    private ServiceDataBase serviceDataBase;
+
+    public ServiceReceptionControllerImpl() {
+    }
+
+    public ServiceReceptionControllerImpl(ServiceDataBase serviceDataBase) {
+        this.serviceDataBase = serviceDataBase;
+    }
 
     @Override
     public ReceptionUser loginServiceUser(String name, String pass) throws LoginDataException {
@@ -54,5 +63,4 @@ public class ServiceReceptionControllerImpl implements IServiceReceptionControll
     public List<Ticket> showTicketsByDate() throws AppException {
         return null;
     }
-
 }

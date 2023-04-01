@@ -7,7 +7,7 @@ import service_app.model.ReceptionUser;
 
 import java.util.List;
 
-public interface IServiceReceptionController {
+public interface ServiceReceptionController {
 
     ReceptionUser loginServiceUser(String name, String pass) throws LoginDataException;
 
