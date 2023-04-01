@@ -13,11 +13,12 @@ public class Ticket {
     private Date creationDate;
     private Date issueDate;
 
-    private Client client;
-    private Engineer engineer;
+/*    private Client client;
+    private Engineer engineer;*/
 
     private String lastChangesBy;
 
-    private String
+    private String priblemDiscription;
+    private String notes;
 
 }
