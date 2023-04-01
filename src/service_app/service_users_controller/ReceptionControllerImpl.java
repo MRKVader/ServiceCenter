@@ -1,6 +1,5 @@
 package service_app.service_users_controller;
 
-import service_app.db.ServiceDataBase;
 import service_app.exception.AppException;
 import service_app.exception.LoginDataException;
 import service_app.model.ReceptionUser;
@@ -8,16 +7,7 @@ import service_app.model.Ticket;
 
 import java.util.List;
 
-public class ServiceReceptionControllerImpl implements ReceptionController{
-
-    private ServiceDataBase serviceDataBase;
-
-    public ServiceReceptionControllerImpl() {
-    }
-
-    public ServiceReceptionControllerImpl(ServiceDataBase serviceDataBase) {
-        this.serviceDataBase = serviceDataBase;
-    }
+public class ReceptionControllerImpl implements ReceptionController {
 
     @Override
     public ReceptionUser loginServiceUser(String name, String pass) throws LoginDataException {
