@@ -2,12 +2,15 @@ package service_app.service_users_controller;
 
 import service_app.exception.AppException;
 import service_app.exception.LoginDataException;
+import service_app.exception.RegisterDataException;
 import service_app.model.Ticket;
 import service_app.model.ReceptionUser;
 
 import java.util.List;
 
 public interface ServiceReceptionController {
+
+    ReceptionUser registerReceptionUser(String name, String pass) throws AppException, RegisterDataException;
 
     ReceptionUser loginServiceUser(String name, String pass) throws LoginDataException;
 

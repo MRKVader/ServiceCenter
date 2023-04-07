@@ -3,6 +3,7 @@ package service_app.service_users_controller;
 import service_app.db.ServiceDataBase;
 import service_app.exception.AppException;
 import service_app.exception.LoginDataException;
+import service_app.exception.RegisterDataException;
 import service_app.model.ReceptionUser;
 import service_app.model.Ticket;
 
@@ -17,6 +18,15 @@ public class ServiceReceptionControllerImpl implements ServiceReceptionControlle
 
     public ServiceReceptionControllerImpl(ServiceDataBase serviceDataBase) {
         this.serviceDataBase = serviceDataBase;
+    }
+
+    @Override
+    public ReceptionUser registerReceptionUser(String name, String pass) throws AppException, RegisterDataException {
+        ReceptionUser user = new ReceptionUser();
+        user.setName(name);
+        user.setPass(pass);
+
+        return serviceDataBase.addReceptionUser(user);
     }
 
     @Override

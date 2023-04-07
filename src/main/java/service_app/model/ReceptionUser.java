@@ -1,10 +1,12 @@
 package service_app.model;
 
+import service_app.exception.RegisterDataException;
+
 public class ReceptionUser {
 
     private int id;
     private String name;
-    private String password;
+    private String pass;
 
     public ReceptionUser() {
     }
@@ -12,7 +14,7 @@ public class ReceptionUser {
     public ReceptionUser(int id, String name, String password) {
         this.id = id;
         this.name = name;
-        this.password = password;
+        this.pass = password;
     }
 
     public int getId() {
@@ -27,16 +29,24 @@ public class ReceptionUser {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws RegisterDataException {
+        if (!name.matches("^[A-z]-\\s-[A-z]{3,16}$")) {
+            throw new RegisterDataException("Incorrect name");
+        } else {
+            this.name = name;
+        }
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) throws RegisterDataException {
+        if (!pass.matches("^[a-z0-9]{8,18}$")) {
+            throw new RegisterDataException("Incorrect password");
+        } else {
+            this.pass = pass;
+        }
     }
 
     @Override

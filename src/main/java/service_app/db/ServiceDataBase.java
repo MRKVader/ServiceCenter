@@ -26,7 +26,8 @@ public class ServiceDataBase {
 
     public ReceptionUser addReceptionUser(ReceptionUser receptionUser){
         receptionUser.setId(serviceUsersCont);
-        receptionUserMap.put(serviceUsersCont++, receptionUser);
+        receptionUserMap.put(serviceUsersCont, receptionUser);
+        serviceUsersCont++;
         return receptionUser;
     }
 
